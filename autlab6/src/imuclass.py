@@ -10,7 +10,7 @@ class SuscriptorImu(object):
         topic = '/imu'
         self.pub = rospy.Subscriber(topic, Imu, self.callback)
         self.linear_vel = [0.0, 0.0]
-        self.imu = None
+        self.imu = Imu()
         
     def callback(self, msg):
         self.imu = msg
